@@ -56,6 +56,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -131,6 +133,7 @@
     <Compile Include="Controllers\CountriesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PeopleController.cs" />
+    <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\StatesController.cs" />
     <Compile Include="DAL\PersonContext.cs" />
     <Compile Include="Global.asax.cs">
@@ -145,10 +148,36 @@
       <DependentUpon>202007220346568_eMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\City.cs" />
-    <Compile Include="Models\Country.cs" />
-    <Compile Include="Models\Person.cs" />
-    <Compile Include="Models\State.cs" />
+    <Compile Include="Models\Address.cs">
+      <DependentUpon>Seaech.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\City.cs">
+      <DependentUpon>Seaech.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Country.cs">
+      <DependentUpon>Seaech.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Person.cs">
+      <DependentUpon>Seaech.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Seaech.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Seaech.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Seaech.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Seaech.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Seaech.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Seaech.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\State.cs">
+      <DependentUpon>Seaech.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -160,8 +189,25 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Models\Seaech.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Seaech.edmx</DependentUpon>
+      <LastGenOutput>Seaech.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Seaech.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Seaech.edmx</DependentUpon>
+      <LastGenOutput>Seaech.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="Models\Seaech.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Seaech.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Seaech.edmx.diagram">
+      <DependentUpon>Seaech.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -207,6 +253,7 @@
     <Content Include="Views\Cities\Details.cshtml" />
     <Content Include="Views\Cities\Edit.cshtml" />
     <Content Include="Views\Cities\Index.cshtml" />
+    <Content Include="Views\Search\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -231,6 +278,9 @@
     <EmbeddedResource Include="Migrations\202007220346568_eMigration.resx">
       <DependentUpon>202007220346568_eMigration.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
