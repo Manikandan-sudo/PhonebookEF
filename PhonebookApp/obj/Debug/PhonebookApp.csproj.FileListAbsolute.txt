@@ -83,4 +83,3 @@ C:\Users\Alice\source\repos\PhonebookApp\PhonebookApp\bin\EntityFramework.SqlSer
 C:\Users\Alice\source\repos\PhonebookApp\PhonebookApp\obj\Debug\PhonebookApp.Migrations.InitialCreate.resources
 C:\Users\Alice\source\repos\PhonebookApp\PhonebookApp\obj\Debug\PhonebookApp.csproj.GenerateResource.cache
 C:\Users\Alice\source\repos\PhonebookApp\PhonebookApp\obj\Debug\PhonebookApp.Migrations.eMigration.resources
-C:\Users\Alice\source\repos\PhonebookApp\PhonebookApp\obj\Debug\PhonebookApp.csprojAssemblyReference.cache
