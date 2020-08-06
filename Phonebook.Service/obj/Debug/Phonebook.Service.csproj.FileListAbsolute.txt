@@ -1,0 +1,15 @@
+C:\Users\Alice\source\repos\PhonebookApp\Phonebook.Service\bin\Debug\Phonebook.Service.dll.config
+C:\Users\Alice\source\repos\PhonebookApp\Phonebook.Service\bin\Debug\Phonebook.Service.dll
+C:\Users\Alice\source\repos\PhonebookApp\Phonebook.Service\bin\Debug\Phonebook.Service.pdb
+C:\Users\Alice\source\repos\PhonebookApp\Phonebook.Service\bin\Debug\EntityFramework.dll
+C:\Users\Alice\source\repos\PhonebookApp\Phonebook.Service\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Alice\source\repos\PhonebookApp\Phonebook.Service\bin\Debug\Phonebook.DAL.dll
+C:\Users\Alice\source\repos\PhonebookApp\Phonebook.Service\bin\Debug\Phonebook.DAL.pdb
+C:\Users\Alice\source\repos\PhonebookApp\Phonebook.Service\bin\Debug\Phonebook.DAL.dll.config
+C:\Users\Alice\source\repos\PhonebookApp\Phonebook.Service\bin\Debug\EntityFramework.xml
+C:\Users\Alice\source\repos\PhonebookApp\Phonebook.Service\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Alice\source\repos\PhonebookApp\Phonebook.Service\obj\Debug\Phonebook.Service.csprojAssemblyReference.cache
+C:\Users\Alice\source\repos\PhonebookApp\Phonebook.Service\obj\Debug\Phonebook.Service.csproj.CoreCompileInputs.cache
+C:\Users\Alice\source\repos\PhonebookApp\Phonebook.Service\obj\Debug\Phonebook.Service.csproj.CopyComplete
+C:\Users\Alice\source\repos\PhonebookApp\Phonebook.Service\obj\Debug\Phonebook.Service.dll
+C:\Users\Alice\source\repos\PhonebookApp\Phonebook.Service\obj\Debug\Phonebook.Service.pdb

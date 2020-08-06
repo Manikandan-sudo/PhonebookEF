@@ -235,6 +235,12 @@
       <DependentUpon>202007220346568_eMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\WebAPI\WebAPI\WebAPI.csproj">
+      <Project>{2125e879-94d8-44f3-bdd6-19c6a934e502}</Project>
+      <Name>WebAPI</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
