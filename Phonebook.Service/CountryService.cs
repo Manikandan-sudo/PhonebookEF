@@ -42,12 +42,13 @@ namespace Phonebook.Service
             return country;
         }
 
-        public String DeleteCountries(Country country)
+        public Country DeleteCountries(Country country)
         {
-            Country co = personContext.Countries.Where(x => x.CountryName.Contains(country.CountryName)).FirstOrDefault();
+            Country co = personContext.Countries.Where(c => c.CountryName.Contains(country.CountryName)).FirstOrDefault();
             personContext.Countries.Remove(co);
             personContext.SaveChanges();
-            return "200 OK. Country Deleted";
+            return country;
         }
+
     }
 }
