@@ -58,59 +58,82 @@
         </th>
 
         @*<th>
-            @Html.DisplayNameFor(model => model.IsActive)
-        </th>*@
+                @Html.DisplayNameFor(model => model.IsActive)
+            </th>*@
         <th></th>
     </tr>
 
     @foreach (var item in Model)
     {
-<tr>
+        <tr>
 
-    <td>
-        @Html.DisplayFor(modelItem => item.FirstName)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.LastName)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.PhoneNumber)
-    </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhoneNumber)
+            </td>
 
-    <td>
-        @Html.DisplayFor(modelItem => item.EmailAddress)
-    </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmailAddress)
+            </td>
 
-    <td>
-        @Html.DisplayFor(modelItem => item.AddressOne)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.AddressTwo)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.PinCode)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.City.CityName)
-    </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AddressOne)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AddressTwo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PinCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.City.CityName)
+            </td>
 
-    <td>
-        @Html.DisplayFor(modelItem => item.State.StateName)
-    </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.State.StateName)
+            </td>
 
-    <td>
-        @Html.DisplayFor(modelItem => item.Country.CountryName)
-    </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Country.CountryName)
+            </td>
 
-    @*<td>
-            @Html.DisplayFor(modelItem => item.IsActive)
-        </td>*@
-    <td>
-        @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
-        @Html.ActionLink("Details", "Details", new { id = item.ID }) |
-        @Html.ActionLink("Delete", "Delete", new { id = item.ID })
-    </td>
-</tr>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.IsActive)
+                </td>*@
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+            </td>
+        </tr>
     }
 
 </table>
+
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.min.js"></script>
+
+
+<script>
+    var uri = 'https://localhost:44388/api/Countries';
+    $(document).ready(function () {
+        // Send an AJAX request
+        $.getJSON(uri)
+            .done(function (data) {
+                // On success, 'data' contains a list of products.
+                $.each(data, function (key, item) {
+                    // Add a list item for the product.
+                    $('<li>', { text: item.CountryName }).appendTo($('#countries'));
+                });
+            });
+    });
+</script>
+
+<div>
+    <ul id="Countries">
+    </ul>
+</div>

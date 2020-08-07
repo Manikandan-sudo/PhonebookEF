@@ -1,10 +1,9 @@
 ﻿using Phonebook.DAL;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Migrations;
 using System.Linq;
-using System.Security.Policy;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Phonebook.Service
 {
@@ -21,7 +20,10 @@ namespace Phonebook.Service
         }
 
 
-
+        public IEnumerable<Country> GetCountriesByID(int id)
+        {
+            return personContext.Countries.Where(p => p.CountryId.Equals(id));
+        }
         public IEnumerable<Country> AddCountries(Country country)
         {
             personContext.Countries.Add(country);
@@ -29,9 +31,23 @@ namespace Phonebook.Service
             return personContext.Countries;
         }
 
-        public IEnumerable<Country> UpdateCountries(Country country)
+        public Country UpdateCountries(Country country)
         {
+            if (!personContext.Countries.Any(x => x.CountryId == country.CountryId))
+            {
+                throw new InvalidOperationException("Country Id NotFound");
+            }
+            personContext.Countries.AddOrUpdate(country);
+            personContext.SaveChanges();
+            return country;
+        }
 
+        public String DeleteCountries(Country country)
+        {
+            Country co = personContext.Countries.Where(x => x.CountryName.Contains(country.CountryName)).FirstOrDefault();
+            personContext.Countries.Remove(co);
+            personContext.SaveChanges();
+            return "200 OK. Country Deleted";
         }
     }
 }
