@@ -33,17 +33,25 @@ namespace Phonebook.Service
 
         public Country UpdateCountries(Country country)
         {
-            if (!personContext.Countries.Any(x => x.CountryId == country.CountryId))
+            var val = personContext.Countries.FirstOrDefault(x => x.CountryId == country.CountryId);
+            if(val==null)
             {
                 throw new InvalidOperationException("Country Id NotFound");
             }
-            personContext.Countries.AddOrUpdate(country);
+            //personContext.Countries.AddOrUpdate(country);
+            val.CountryName = country.CountryName;
             personContext.SaveChanges();
             return country;
         }
 
         public Country DeleteCountries(Country country)
         {
+            var val = personContext.Countries.FirstOrDefault(x => x.CountryId == country.CountryId);
+
+            if (val == null)
+            {
+                throw new InvalidOperationException("Country Id NotFound");
+            }
             Country co = personContext.Countries.Where(c => c.CountryName.Contains(country.CountryName)).FirstOrDefault();
             personContext.Countries.Remove(co);
             personContext.SaveChanges();
